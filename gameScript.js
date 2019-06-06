@@ -4,6 +4,8 @@ var multiply = document.getElementById('multiply');
 var autoclick = document.getElementById('autoclick');
 var bonus = document.getElementById('bonus');
 
+hello
+
 var multiplierCost = 20;
 var autoclickCost = 50;
 var bonusCost = 250;
