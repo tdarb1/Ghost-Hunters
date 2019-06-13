@@ -1,1 +1,46 @@
-
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+  <title>Ghost Hunters</title>
+  <link rel="icon" href="images/GhostIcon.png">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link href="gameStyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div id="bg1">
+    <div id="display">
+      <img src="images/Background5.jpg" id="lastLevel" alt="Last Level">
+      &#9679;&#9679;&#9679;
+      <img src="images/Background1.jpg" id="thisLevel" alt="This Level" style="height:60px; width:60px;">
+      &#9679;&#9679;&#9679;
+      <img src="images/Background2.jpg" id="nextLevel" alt="Next Level">
+    </div>
+    <div id="display1"></div>
+    <div class="home" style="text-align:left; width:20px; height:20px;">
+		  <a href="index.html">
+			  <img src="images/Home.png" alt="Home" id="home" style="border:none; width:60px; height:60px;">
+      </a>
+    </div>
+    <div id="display2">
+      <img src="images/GhostIcon.png" id="ghostIcon" alt="Ghost Icon" style="height:60px; width:60px; border: none;">
+      <div id="display3"></div>
+    </div>
+    <progress id="health" value="8" max="8"></progress>
+    <center>
+      <div id="display4">
+        <img src="images/CoinIcon.png" id="coinIcon" alt="Coin Icon" style="height:30px; width:30px; border: none;">
+        <div id="display5"></div>
+      </div>
+      <input id="click" type="image" value="click" src="images/Ghost5.gif">
+    </center>
+  </div>
+  <div id="bg2">
+    <div class="container">
+      <input id="multiply" class="btn" type="button" value="">
+      <input id="autoclick" class="btn" type="button" value="">
+      <input id="bonus" class="btn" type="button" value="">
+    </div>
+  </div>
+  <script type="text/javascript" src="gameScript.js"></script>
+</body>
+</html>

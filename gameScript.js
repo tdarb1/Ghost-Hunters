@@ -3,6 +3,7 @@ var click = document.getElementById('click');
 var multiply = document.getElementById('multiply');
 var autoclick = document.getElementById('autoclick');
 var bonus = document.getElementById('bonus');
+let healthBar = document.getElementById("health");
 
 var multiplierCost = 20;
 var autoclickCost = 50;
@@ -14,29 +15,52 @@ var bonusOn = false;
 var score = 0;
 var clickValue = 1;
 var multiplier = 1;
-var bonusTime = 10;
+var bonusTime = 20;
 var level = 1;
 var subLevel = 1;
 var health = 8;
+var counter = 0;
+
+var imgArray = new Array();
+imgArray[0] = "url('images/Background1.jpg')";
+imgArray[1] = "url('images/Background2.jpg')";
+imgArray[2] = "url('images/Background3.jpg')";
+imgArray[3] = "url('images/Background4.jpg')";
+imgArray[4] = "url('images/Background5.jpg')";
+
+var nextLvlArray = new Array();
+nextLvlArray[0] = "images/Background1.jpg";
+nextLvlArray[1] = "images/Background2.jpg";
+nextLvlArray[2] = "images/Background3.jpg";
+nextLvlArray[3] = "images/Background4.jpg";
+nextLvlArray[4] = "images/Background5.jpg";
+
+var ghostArray = new Array();
+ghostArray[0] = "images/Ghost1.gif";
+ghostArray[1] = "images/Ghost2.gif";
+ghostArray[2] = "images/Ghost3.gif";
+ghostArray[3] = "images/Ghost4.gif";
+ghostArray[4] = "images/Ghost5.gif";
+
 
 function displayScore() {
-  display.innerHTML = score;
-}
-
-function displayHealth() {
-  display1.innerHTML = health;
+  display1.innerHTML = 'Level ' + level;
 }
 
 function displayLevel() {
-  display2.innerHTML = level;
+  display3.innerHTML = subLevel + '/8';
+}
+
+function displayHealth() {
+  healthBar.value = health;
 }
 
 function displaySubLevel() {
-  display3.innerHTML = subLevel;
+  display5.innerHTML = score;
 }
 
 function displayMultiplier() {
-  multiply.value = 'Multiplier x' + multiplier + ' (next: cost ' + multiplierCost + ')';
+  multiply.value = 'Multiplier x' + multiplier + ' (cost ' + multiplierCost + ')';
 }
 
 function displayAutoclick() {
@@ -83,16 +107,34 @@ function buttonsEnabler() {
 
 function increaseScore() {
   health -= clickValue;
-  if (subLevel > 8){
-    level +=1;
-    subLevel = 1;
+  if (health <= 0) {
+    var x = Math.floor(Math.random() * 1000) + 75;
+    var y = Math.floor(Math.random() * 4);
+    document.getElementById("click").src = ghostArray[y];
+    if (level % 5 == 0 && subLevel == 1) {
+      counter++;
+      document.getElementById("bg1").style.backgroundImage = imgArray[counter];
+      document.getElementById("lastLevel").src = nextLvlArray[counter - 1];
+      document.getElementById("thisLevel").src = nextLvlArray[counter];
+      document.getElementById("nextLevel").src = nextLvlArray[counter + 1];
+      if (counter > 4) {
+        counter = 0;
+      }
+    }
+    subLevel += 1;
+    score += x * level * subLevel;
+    health = 8 * level * subLevel;
+    document.getElementById("health").max = health;
+    if (subLevel > 8) {
+      level += 1;
+      subLevel = 1;
+    }
+    if (subLevel == 8) {
+      health = 8 * level * subLevel * 5;
+      document.getElementById("health").max = health;
+    }
   }
-  if (health <= 0){
-  score += 20 * level * subLevel;
-  subLevel +=1;
-  health = 8 * level * subLevel;
-  }
-  
+
   buttonsEnabler();
   displayScore();
   displayHealth();
@@ -107,7 +149,7 @@ function increaseMultiplier() {
   if (bonusOn) {
     clickValue *= 2;
   }
-  multiplierCost *= multiplier;
+  multiplierCost = Math.round(multiplierCost * 1.5);
   buttonsEnabler();
   displayScore();
   displayMultiplier();
