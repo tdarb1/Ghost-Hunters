@@ -47,9 +47,7 @@ span2.onclick = function() {
   modal.style.display = "none";
 }
 
-var play = document.getElementById("play");
-
-play.onClick = function() {
+function() loadGame {
   window.open('game.html', "_self");
 }
 
