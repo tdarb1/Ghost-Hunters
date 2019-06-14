@@ -4,11 +4,15 @@ body {
   text-shadow: 1px 1px black;
   color: white;
   font-size: 20px;
-  overflow: hidden;
+  background-color: black;
   }
 
 marquee {
   padding: 300px;
+}
+
+.title {
+  font-size: 100;
 }
 
   
@@ -27,7 +31,7 @@ marquee {
 
 
 .modal-content {
-  background-color: rgb(139,137,155);
+  background-color: #D0D3D4;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -81,7 +85,7 @@ marquee {
 
 
 .modal2-content {
-  background-color: rgb(139,137,155);
+  background-color: #D0D3D4 ;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
