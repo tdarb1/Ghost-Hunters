@@ -1,3 +1,4 @@
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -48,6 +49,11 @@ span2.onclick = function() {
 
 var play = document.getElementById("play");
 
-function load() {
+play.onClick = function() {
   window.open('game.html', "_self");
-};
+}
+
+
+
+
+
