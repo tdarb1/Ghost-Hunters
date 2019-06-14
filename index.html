@@ -1,31 +1,33 @@
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Ghost Hunters</title>
-	<link href="style.css" rel="stylesheet" type="text/css">
-
-</head>
-
-<body>
-
-	<p id="title" align="center" valign="center" style="font:50;"> Ghost Hunters </p>
-
-
-
-	<div align="right" style="float:right;font-size:20;">
-		<marquee behavior="scroll" direction="left" scrollamount="15"> Welcome Player 1. You are about to embark on a dangerous
-			mission to catch the ghosts that roam this land. During the course of your mission, you will continue to upgrade your
-			equipment and sharpen your skills in order to catch more ghosts. However, you must beware. There are strange forces at
-			play, and even bigger foes than you might imagine..... [Click Begin to launch the tuorial] </marquee>
-	</div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ghost Hunters</title>
+    <link href="style_menu.css" rel="stylesheet" type="text/css">
+   
+  </head>
+  <body>
+     
+     
+    
+    <div align="right" style="float:right;font-size:20;">
+     <marquee behavior="scroll" direction="left"  scrollamount="14"> Welcome Player 1. You are about to embark on a dangerous mission to catch the ghosts that roam this land. During the course of your mission, you will continue to upgrade your equipment and sharpen your skills in order to catch more ghosts. However, you must beware. There are strange forces at play, and even bigger foes than you might imagine..... [Click Begin to launch the tuorial] </marquee>
+     </div>
 
 
 
-	<!-- Trigger/Open The Modal -->
-	<div align="center" valign="top">
-		<button id="myBtn" >Begin</button>
+<!-- Trigger/Open The Modal -->
+ <div align="center" valign="top">
+<button id="myBtn" style="background-color: #FF8C00;
+font-family: 'Bree Serif', serif;
+ border: none; color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; " >Begin</button>
 </div>
 
 <!-- The Modal -->
@@ -34,8 +36,18 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p> <b>Welcome to the tutorial. When you click continue, you will see a screen with all the functions of this game. Pay attention, because you will only see this once. </b></p>
-    <button id="contBtn"  > Continue </button>
+    <p> <b>Welcome to the tutorial. When you click continue, you will see a screen with all the functions of this game. Pay attention, because you will only see this once. Do not click off, as you have begun a process which you cannot undo.... </b></p>
+    <button id="contBtn" 
+    style="background-color: #FF8C00;
+font-family: 'Bree Serif', serif;
+ border: none; color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; "  > Continue </button>
   </div>
 
 </div>
@@ -49,14 +61,27 @@
     <span class="close2">&times;</span>
     <p> <b> Here is an overview of the controls and what the game will look like: </b>
 
-      <button id="play" onclick="load()"> Play </button>
+    <a href> <img src="tutorial.jpg"> </a>
+
+      <button id="play" 
+      style="background-color: #FF8C00;
+font-family: 'Bree Serif', serif;
+ border: none; color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; "> Play </button>
     </p>
     
   </div>
 
 </div>
 
-  <script type="text/javascript" src="script.js"></script>
+<script src="script_menu.js"> </script>
  
+
  </body>
 </html>
